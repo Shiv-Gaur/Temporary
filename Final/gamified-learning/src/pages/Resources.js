@@ -1,23 +1,39 @@
+// src/pages/Resources.js
 import React from 'react';
+import '../index.css';
 
 const resources = [
-  { title: "Data Structures Overview", link: "https://www.geeksforgeeks.org/data-structures/" },
-  { title: "Algorithms in Depth", link: "https://www.khanacademy.org/computing/computer-science/algorithms" },
-  { title: "React Documentation", link: "https://reactjs.org/docs/getting-started.html" }
+  {
+    title: "Data Structures Overview",
+    description: "A comprehensive guide to data structures with examples and use cases.",
+    link: "https://www.geeksforgeeks.org/data-structures/"
+  },
+  {
+    title: "Algorithms in Depth",
+    description: "Learn algorithms with step-by-step explanations and interactive examples.",
+    link: "https://www.khanacademy.org/computing/computer-science/algorithms"
+  },
+  {
+    title: "React Documentation",
+    description: "Official React documentation, tutorials, and guides.",
+    link: "https://reactjs.org/docs/getting-started.html"
+  }
 ];
 
 const Resources = () => (
   <div className="resources-page">
     <h2>Learning Resources & Notes</h2>
-    <ul>
+    <div className="resources-container">
       {resources.map((res, index) => (
-        <li key={index}>
-          <a href={res.link} target="_blank" rel="noopener noreferrer">
-            {res.title}
+        <div key={index} className="resource-card">
+          <h3>{res.title}</h3>
+          <p>{res.description}</p>
+          <a href={res.link} target="_blank" rel="noopener noreferrer" className="btn">
+            Learn More
           </a>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 );
 
